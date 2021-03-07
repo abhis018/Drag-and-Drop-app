@@ -31,12 +31,12 @@ class DragandDrop extends Component {
 	    event.preventDefault();
 	}
 
-	onDrop = (event, cat) => {
+	onDrop = (event, file) => {
 	    let taskName = event.dataTransfer.getData("taskName");
 
 	    let tasks = this.state.tasks.filter((task) => {
 	        if (task.taskName === taskName) {
-	            task.type = cat;
+	            task.type = file;
 	        }
 	        return task;
 	    });
@@ -54,7 +54,7 @@ class DragandDrop extends Component {
         }
         this.state.tasks.forEach ((task) => {
             tasks[task.type].push(
-              <div key={task.id} 
+              <div
                 onDragStart = {(event) => this.onDragStart(event, task.taskName)}
                 draggable
                 className="draggable"
@@ -66,22 +66,26 @@ class DragandDrop extends Component {
         return(
             <div className="drag-container">
                 <div className="container">
+                    <div className="group-header group2">Done</div>
+                    <div className="group-header group3">Working</div>
+                    <div className="group-header group1">To do</div>
+                </div>
+                <div className="container">
                     <div className="droppable"
                         onDragOver={(event)=>this.onDragOver(event)}
                         onDrop={(event)=>this.onDrop(event, "Done")}>
-                        <div className="group-header group2">Done</div>
+                        
                         {tasks.Done}
                     </div>
                     <div className="Working"
                         onDragOver={(event)=>this.onDragOver(event)}
                         onDrop={(event)=>this.onDrop(event, "Working")}>
-                        <div className="group-header group3">Working</div>
+                        
                         {tasks.Working}
                     </div>
                     <div className="Progress"
                         onDragOver={(event)=>this.onDragOver(event)}
                         onDrop={(event)=>{this.onDrop(event, "inProgress")}}>
-                        <div className="group-header group1">To do</div>
                         {tasks.inProgress}
                     </div>
                 </div>

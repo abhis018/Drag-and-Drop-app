@@ -1,12 +1,13 @@
 .drag-container {
     text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
   }
 .container{
-    margin-top: 100px;
+    margin-top: 70px;
 }
 
 .draggable {
-    width: 200px;
+    width: 250px;
     height: 40px;
     background-color: white;
     margin: 10px auto;
@@ -25,12 +26,14 @@
     top: 10;
     background-color: #CCCCCC;
     margin-right: 120px;
+    margin-top: 50px;
     overflow-y: auto;
   }
   
   .Progress {
     position: absolute;
     margin-left: 160px;
+    margin-top: 50px;
     width: 300px;
     height: 60%;
     left: 0;
@@ -46,26 +49,33 @@
     left: 0;
     top: 10;
     background-color: #CCCCCC;
-    margin-left: 500px;
+    margin-left: 510px;
+    margin-top: 50px;
     overflow-y: auto;
   }
   .group-header{
     width: 300px;
     height: 40px;
     margin: -50px auto;
-    border-radius: 5px;
+    border-radius: 5px 5px 0 0;
     color: white;
     padding-top: 10px;
     position: fixed;
   }
 .group1{
     background-color: blue;
+    margin-left: 160px;
+    margin-top: 0;
 }
 .group2{
     background-color: green;
+    margin-left: 860px;
+    margin-top: 0;
 }
 .group3{
     background-color: orange;
+    margin-left: 510px;
+    margin-top: 0;
 }
 
 
